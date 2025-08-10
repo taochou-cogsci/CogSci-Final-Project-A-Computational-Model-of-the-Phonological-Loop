@@ -8,7 +8,9 @@ To run the code, you just need to run 'main.m'. Several options of the model are
 Another way is that you can directly run 'run_model.m' in the command line, if the parameters have been defined. For example, you can type the following lines in the command line:
 
 run_model('exponential', 'head to tail', 'off', 'off', 0.46, 0.6, 0, 0, 1)
+
 run_model('exponential', 'random', 'on', 'off', 0.46, 0.6, 0.08, 0, 1)  
+
 run_model('exponential', 'head to tail', 'on', 'on', 0.46, 0.6, 0.08, 0.12, 0)  # the last parameter determines if it's a test/evaluation
 
 
