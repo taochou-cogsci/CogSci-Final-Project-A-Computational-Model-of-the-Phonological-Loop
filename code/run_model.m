@@ -27,19 +27,18 @@ function RMSD = run_model(decayType, rehearseType, actDiff, assocRetrieval, decR
     for tPerWord=tRange
         if Istest & strcmp(assocRetrieval, 'on')
             if i <= 2
-                cos_sim = load('short_matrix.mat').short_matrix;
+                Cos_Sim = load('long_matrix.mat').long_matrix;
             elseif i <= 4
-                cos_sim = load('medium_matrix.mat').medium_matrix;
+                Cos_Sim = load('medium_matrix.mat').medium_matrix;
             else
-                cos_sim = load('long_matrix.mat').long_matrix;
+                Cos_Sim = load('short_matrix.mat').short_matrix;
             end
         end
     
         for rep=1:nReps
             if Istest & strcmp(assocRetrieval, 'on')  % shuffle the cos_sim to simulate the random choice of words
-                n = size(cos_sim, 1);         
-                idx = randperm(n);            
-                cos_sim = cos_sim(idx, idx);  
+                idx = randperm(6, 5); 
+                cos_sim = Cos_Sim(idx, idx);  
             end
 
             actVals = initAct;
